@@ -21,26 +21,18 @@ import in.co.rays.project_3.util.PropertyReader;
 import in.co.rays.project_3.util.ServletUtility;
 
 @WebServlet(name = "PatientListCtl", urlPatterns = { "/ctl/PatientListCtl" })
-public class PatientListCtl extends BaseCtl{
-	
+public class PatientListCtl extends BaseCtl {
 
 	@Override
 	protected void preload(HttpServletRequest request) {
 
-	
 		Map<Integer, String> map = new HashMap();
 		map.put(1, "malaria");
 		map.put(2, "dangue");
-	
-		
-		
+
 		request.setAttribute("division1", map);
-		
 
 	}
-
-		
-	
 
 	protected BaseDTO populateDTO(HttpServletRequest request) {
 		PatientDTO dto = new PatientDTO();
@@ -84,7 +76,7 @@ public class PatientListCtl extends BaseCtl{
 				request.setAttribute("nextListSize", next.size());
 			}
 			ServletUtility.setList(list, request);
-			System.out.println("list"+ list);
+			System.out.println("list" + list);
 			ServletUtility.setPageNo(pageNo, request);
 			ServletUtility.setPageSize(pageSize, request);
 			ServletUtility.forward(getView(), request, response);
@@ -114,8 +106,6 @@ public class PatientListCtl extends BaseCtl{
 		try {
 
 			if (OP_SEARCH.equalsIgnoreCase(op) || "Next".equalsIgnoreCase(op) || "Previous".equalsIgnoreCase(op)) {
-
-			
 
 				if (OP_SEARCH.equalsIgnoreCase(op)) {
 

@@ -208,6 +208,10 @@ i.css {
 									%>
 									<div class="alert alert-danger alert-dismissible">
 										<button type="button" class="close" data-dismiss="alert">&times;</button>
+									
+									
+									
+									
 										<%=ServletUtility.getErrorMessage(request)%>
 									</div>
 									<%
@@ -262,11 +266,7 @@ i.css {
 								</div>
 								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("dateOfVisit", request)%></font></br>
 
-
-								--
-								<!---------------------------------------------------------------------------------------------------------------------------------------  -->
-
-
+	<!---------------------------------------------------------------------------------------------------------------------------------------  -->
 								<span class="pl-sm-5"><b>Mobile </b> <span
 									style="color: red;">*</span></span> </br>
 								<div class="col-sm-12">
@@ -277,16 +277,18 @@ i.css {
 													style="font-size: 1rem;"></i>
 											</div>
 										</div>
-										<input type="number" class="form-control" id="mobile"
-											oninput="numberLength(this)" name="mobile"
-											placeholder="mobile No" maxlength="10"
+										<input type="text	" class="form-control" id="mobile"
+										oninput="handleMobileNumberInput(this, 'mobileError', 10)"
+									    onblur="validateIntegerInput(this, 'mobileError', 10)" rows="5"
+										
+											placeholder=" Enter mobile No" 
 											value="<%=DataUtility.getStringData(dto.getMobile())%>">
 
 									</div>
 								</div>
-								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("mobile", request)%></font></br>
+								<font color="red" class="pl-sm-5" id="mobileError"> <%=ServletUtility.getErrorMessage("mobile", request)%></font></br>
 
-								--
+							
 								<!---------------------------------------------------------------------------------------------------------------------------------------  -->
 								<span class="pl-sm-5"><b>Decease</b> <span
 									style="color: red;">*</span></span></br>

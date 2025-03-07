@@ -57,9 +57,13 @@
 		<mapping
 			resource="in/co/rays/project_3/hbm/CompensationDTO.hbm.xml" />
 
-           <mapping
-			resource="in/co/rays/project_3/hbm/PatientDTO.hbm.xml"/>
-			
+		<mapping
+			resource="in/co/rays/project_3/hbm/PatientDTO.hbm.xml" />
+
+
+
+		<mapping
+			resource="in/co/rays/project_3/hbm/FollowUpDTO.hbm.xml" />
 
 
 

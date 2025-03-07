@@ -24,6 +24,27 @@ function validateIntegerInput(inputElement, errorElementId, maxLength) {
         errorMessage.textContent = '';
     }
 }
+function handleMobileNumberInput(inputElement, errorElementId, maxLength) {
+    const errorMessage = document.getElementById(errorElementId);
+    const currentValue = inputElement.value.trim();
+
+    if (isNaN(currentValue) || /[^0-9]/.test(currentValue)) {
+        errorMessage.textContent = 'Please enter only numbers.';
+        inputElement.value = currentValue.replace(/\D/g, '');
+    } else {
+        if (currentValue.length > maxLength) {
+            errorMessage.textContent = `Maximum ${maxLength} digits allowed.`;
+            inputElement.value = currentValue.slice(0, maxLength);
+        } else {
+            if (currentValue.length > 0 && currentValue.charAt(0) <= '5') {
+                errorMessage.textContent = 'Mobile number must start with a digit greater than 5.';
+                inputElement.value = '';
+            } else {
+                errorMessage.textContent = '';
+            }
+        }
+    }
+}
 
 function handleLetterInput(inputElement, errorElementId, maxLength) {
     const errorMessage = document.getElementById(errorElementId);

@@ -92,7 +92,6 @@
 			<%
 				Map map = (Map) request.getAttribute("division1");
 					System.out.println("map = " + map);
-					
 			%>
 
 			<div class="row">
@@ -133,8 +132,8 @@
 			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-2">
-					<input type="text" name="name"
-						placeholder="Enter name" class="form-control"
+					<input type="text" name="name" placeholder="Enter name"
+						class="form-control"
 						oninput="handleLetterInput(this, 'nameError', 30)"
 						onblur="validateLetterInput(this, 'nameError', 30)"
 						value="<%=ServletUtility.getParameter("name", request)%>">
@@ -142,8 +141,8 @@
 
 					<font color="red" class="pl-sm-5" id="nameError"></font>
 				</div>
-				
-				
+
+
 				<div class="col-sm-2">
 					<input type="text" id="datepicker" name="dateOfVisit"
 						class="form-control" placeholder=" Enter dateOfVisit"
@@ -151,47 +150,38 @@
 						value="<%=ServletUtility.getParameter("dateOfVisit", request)%>">
 
 				</div>
-				
-				
-					<div class="col-sm-2">
+
+
+				<div class="col-sm-2">
 					<%=HTMLUtility.getList1("decease", String.valueOf(dto.getDecease()), map)%>
 				</div>
 
-				
-				
-				
-			<div class="col-sm-2">
-					<input type="text" name="mobile"
-						placeholder="Enter mobile" class="form-control"
+
+
+
+				<div class="col-sm-2">
+					<input type="text" name="mobile" placeholder="Enter mobile"
+						class="form-control"
 						oninput="handleLetterInput(this, 'mobileError', 30)"
 						onblur="validateLetterInput(this, 'mobileError', 30)"
-						value="<%=ServletUtility.getParameter("mobileError", request)%>">
+						value="<%=ServletUtility.getParameter("mobile", request)%>">
 
 
 					<font color="red" class="pl-sm-5" id="mobileError"></font>
 				</div>
-				
-
-				     
-
-
-
-
-				<%-- <div class="col-sm-2">
-					<input type="text" name="status" placeholder="Enter status"
-						class="form-control"
-						value="<%=ServletUtility.getParameter("status", request)%>">
-						
-						
-				</div> --%>
-
-			
 
 
 
 
 
-							<center>
+
+
+
+
+
+
+
+				<center>
 					<div class="col-sm-2">
 						<input type="submit" class="btn btn-primary btn-md"
 							style="font-size: 15px" name="operation"
@@ -223,8 +213,6 @@
 					<%
 						while (it.hasNext()) {
 								dto = it.next();
-
-							
 					%>
 					<tbody>
 						<tr>
@@ -234,14 +222,13 @@
 							<td class="text"><%=dto.getName()%></td>
 
 							<td class="text"><%=DataUtility.getDateString(dto.getDateOfVisit())%></td>
-			
-							<td class="text"><%=dto.getMobile()%></td>
-					<td class="text"><%=map.get(Integer.parseInt(dto.getDecease()))%></td>
-							
-											
 
-							<td class="text"><a
-								href="PatientCtl?id=<%=dto.getId()%>">Edit</a></td>
+							<td class="text"><%=dto.getMobile()%></td>
+							<td class="text"><%=map.get(Integer.parseInt(dto.getDecease()))%></td>
+
+
+
+							<td class="text"><a href="PatientCtl?id=<%=dto.getId()%>">Edit</a></td>
 						</tr>
 					</tbody>
 					<%

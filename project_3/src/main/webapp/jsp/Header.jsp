@@ -92,40 +92,9 @@
 					} else if (userDto.getRoleId() == RoleDTO.ADMIN || userDto.getRoleId() == RoleDTO.COLLEGE_SCHOOL) {
 				%>
 
-<%-- 
-	<li class="nav-item dropdown" style="padding-left: 5px;"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: Black;">FollowUp</font>
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.FOLLOWUP_CTL%>"> <i
-							class="fas fa-car"></i>Add FollowUp
-						</a> <a class="dropdown-item" href="<%=ORSView.FOLLOWUP_LIST_CTL%>"><i
-							class="fas fa-bars"></i>FollowUp List</a>
-					</div></li>
 
-
-
-
- --%>
-
+				<!-- >------------------------------------------------------------------------------------------------------ -->
 				<li class="nav-item dropdown" style="padding-left: 5px;"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: Black;">Patient</font>
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.PATIENT_CTL%>"> <i
-							class="fas fa-car"></i>Add Patient
-						</a> <a class="dropdown-item" href="<%=ORSView.PATIENT_LIST_CTL%>"><i
-							class="fas fa-bars"></i>Patient List</a>
-					</div></li>
-
-
-
-				<!-- >---------------------------------------------------------------StockpurchaseMODEL--------------------------------------- -->
-			<%-- 	<li class="nav-item dropdown" style="padding-left: 5px;"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> <font style="color: Black;">Compensation</font>
@@ -137,7 +106,7 @@
 							href="<%=ORSView.COMPENSATION_LIST_CTL%>"><i
 							class="fas fa-bars"></i>Compensation List</a>
 					</div></li>
- --%>
+
 
 
 				<!-- ------------------------------------------------------------------USERMODEL------------------------------------ -->

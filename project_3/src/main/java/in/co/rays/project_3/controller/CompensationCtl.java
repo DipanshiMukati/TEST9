@@ -49,11 +49,7 @@ public class CompensationCtl extends BaseCtl {
 			pass = false;
 
 		}
-		else if (!DataValidator.isName(request.getParameter("staffMember"))) {
-			request.setAttribute("staffMember", "staffMember name must contains alphabets only");
-			pass = false;
-
-		}
+		
 
 		if (DataValidator.isNull(request.getParameter("paymentAmount"))) {
 			request.setAttribute("paymentAmount", PropertyReader.getValue("error.require", " paymentAmount"));
@@ -61,7 +57,7 @@ public class CompensationCtl extends BaseCtl {
 			pass = false;
 		}
 		else if (!DataValidator.isInteger(request.getParameter("paymentAmount"))) {
-			request.setAttribute("paymentAmount", "paymentAmount name must contains i only");
+			request.setAttribute("paymentAmount", "paymentAmount name must contains integer only");
 			pass = false;
 		}
 

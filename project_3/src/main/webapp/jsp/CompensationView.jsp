@@ -14,7 +14,7 @@
 <script src="<%=ORSView.APP_CONTEXT%>/js/validateInput.js"></script>
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CompensationList view</title>
+<title>Compensation view</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="<%=ORSView.APP_CONTEXT%>/js/utilities.js"></script>
 
@@ -168,12 +168,12 @@ i.css {
 								if (dto.getId() != null && id > 0) {
 							%>
 							<h3 class="text-center default-text text-primary">Update
-								CompensationList</h3>
+								Compensation</h3>
 							<%
 								} else {
 							%>
 							<h3 class="text-center default-text text-primary">Add
-								CompensationList</h3>
+								Compensation</h3>
 							<%
 								}
 							%>

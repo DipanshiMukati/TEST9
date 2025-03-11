@@ -27,6 +27,21 @@ public final class ModelFactory {
 		return mFactory;
 	}
 
+	public CompensationModelInt getCompensationModel() {
+
+		CompensationModelInt CompensationModel = (CompensationModelInt) modelCache.get("Model");
+		if (CompensationModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				CompensationModel = new CompensationModelHibImp();
+			}
+
+			modelCache.put("CompensationModel", CompensationModel);
+		}
+
+		return CompensationModel;
+
+	}
+
 	public MarksheetModelInt getMarksheetModel() {
 		MarksheetModelInt marksheetModel = (MarksheetModelInt) modelCache.get("marksheetModel");
 		if (marksheetModel == null) {
@@ -163,60 +178,35 @@ public final class ModelFactory {
 
 		return facultyModel;
 	}
-	
-	
-public CompensationModelInt getCompensationModel() {
-	
-		
-		CompensationModelInt CompensationModel = (CompensationModelInt) modelCache.get("Model");
-		if (CompensationModel == null) {
-			if ("Hibernate".equals(DATABASE)) {
-				CompensationModel = new CompensationModelHibImp();
-			}
-			
-			modelCache.put("CompensationModel", CompensationModel);
-		}
 
-		return CompensationModel;
+	public PatientModelInt getPatientModel() {
 
-
-	}
-
-	
-public PatientModelInt getPatientModel() {
-	
-		
-	PatientModelInt PatientModel = (PatientModelInt) modelCache.get("Model");
+		PatientModelInt PatientModel = (PatientModelInt) modelCache.get("Model");
 		if (PatientModel == null) {
 			if ("Hibernate".equals(DATABASE)) {
 				PatientModel = new PatientModelHibImp();
 			}
-			
+
 			modelCache.put("PatientModel", PatientModel);
 		}
 
 		return PatientModel;
 
-
 	}
-public FollowUpModelInt getFollowUpModel() {
 
-	FollowUpModelInt FollowUpModel = (FollowUpModelInt) modelCache.get("FollowUpModel");
-	if (FollowUpModel == null) {
-		if ("Hibernate".equals(DATABASE)) {
-			FollowUpModel = new FollowUpModelHibImp() {
-			};
+	public FollowUpModelInt getFollowUpModel() {
+
+		FollowUpModelInt FollowUpModel = (FollowUpModelInt) modelCache.get("FollowUpModel");
+		if (FollowUpModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				FollowUpModel = new FollowUpModelHibImp() {
+				};
+			}
+
+			modelCache.put("FollowUpModel", FollowUpModel);
 		}
-		
-		modelCache.put("FollowUpModel",FollowUpModel);
+
+		return FollowUpModel;
 	}
-
-	return FollowUpModel;
-}
-
-
-
-
-
 
 }
